@@ -1,0 +1,39 @@
+from random import *
+digits='0123456789'
+lowercase_letters='abcdefghijklmnopqrstuvwxyz'
+uppercase_letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+punctuation='!#$%&*+-=?@^_'
+chars=''
+	
+c=input('Включать ли цифры? д==да''\n')
+if c=='д':
+	for i in range(randint(2,4)):
+		chars+=choice(digits)
+	print(chars)
+else:
+	print('yasno')
+d=input('Включать ли прописные буквы ? д==да''\n')
+if d=='д':
+	for i in range(randint(2,5)):
+		chars+=choice(lowercase_letters)
+	print(chars)
+else: 
+	print('yasno')
+e=input('Включать ли заглавные буквы ? д==да''\n')
+if e=='д':
+	for i in range(randint(2,3)):
+		chars+=choice(uppercase_letters)
+	print(chars)
+else: 
+	print('yasno')
+f=input('Включать ли символы? д==да''\n')
+if f=='д':
+	for i in range(randint(2,5)):
+		chars+=choice(punctuation)
+else: 
+	print('yasno')
+bbb=[]
+for i in chars:
+	bbb.append(i)
+shuffle(bbb)	
+print(*bbb,sep='')
