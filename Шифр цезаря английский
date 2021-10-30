@@ -1,0 +1,24 @@
+a='Hawnj pk swhg xabkna ukq nqj.'
+b=''
+c=0
+for num in range(1,26):
+	for i in a:
+		if i.isalpha():
+			if i.isupper():
+				if ord(i)-num>64:
+					b+=chr(ord(i)-num)
+				if ord(i)-num<65:
+					c=num-(ord(i)-65)
+					b+=chr(91-c)
+					c=0
+			if i.islower():
+				if ord(i)-num>96:
+					b+=chr(ord(i)-num)
+				if ord(i)-num<97:
+					c=num-(ord(i)-97)   #здесь будет цифра которую надо вычесть из 123(буква Z)
+					b+=chr(123-c)
+		else:
+			b+=i		
+	print(b)
+	b=''
+	print()
